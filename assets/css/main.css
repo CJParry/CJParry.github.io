@@ -3310,7 +3310,9 @@ input, select, textarea {
 		cursor: default;
 		text-align: center;
 		z-index: 1;
-		min-height: 100vh;
+		min-height: 200px;
+				max-height: 500px;
+
 	}
 
 		#intro input, #intro select, #intro textarea {
@@ -3398,7 +3400,7 @@ input, select, textarea {
 		}
 
 		#intro + #header {
-			margin-top: -20rem;
+			margin-top: -2rem;
 		}
 
 			#intro + #header .logo {
@@ -3406,7 +3408,7 @@ input, select, textarea {
 				-webkit-transform: translateY(2rem);
 				-ms-transform: translateY(2rem);
 				transform: translateY(2rem);
-				opacity: 0;
+				opacity: 1;
 				visibility: hidden;
 			}
 
@@ -3420,8 +3422,8 @@ input, select, textarea {
 			-webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, visibility 0.5s;
 			-ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, visibility 0.5s;
 			transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
-			opacity: 0;
-			visibility: hidden;
+			opacity: 1;
+			/*visibility: hidden;*/
 		}
 
 			#intro.hidden + #header .logo {
@@ -3438,7 +3440,7 @@ input, select, textarea {
 			-webkit-transform: translateY(2rem);
 			-ms-transform: translateY(2rem);
 			transform: translateY(2rem);
-			opacity: 0;
+			opacity: 1;
 		}
 
 			body.is-preload #intro:not(.hidden) + #header + #nav {
@@ -3446,7 +3448,7 @@ input, select, textarea {
 				-webkit-transform: translateY(4rem);
 				-ms-transform: translateY(4rem);
 				transform: translateY(4rem);
-				opacity: 0;
+				opacity: 1;
 			}
 
 		@media screen and (max-width: 980px) {
@@ -3470,7 +3472,7 @@ input, select, textarea {
 
 			#intro {
 				padding: 3rem 2rem 1rem 2rem ;
-				min-height: 80vh;
+				min-height: 300px;
 			}
 
 				#intro h1 {
