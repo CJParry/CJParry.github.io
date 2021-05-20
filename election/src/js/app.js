@@ -167,14 +167,14 @@ App = {
 };
 
 var BestToking; // = require('./BestToking.json'); //with path
-$.getJSON("/BestToking.json", function(json) {
+$.getJSON("./js/BestToking.json", function(json) {
     console.log(json); // this will show the info it in firebug console
     BestToking = json;
 });
 
 
 var bep20Token; // = require('./BestToking.json'); //with path
-$.getJSON("./BEP20Token.json", function(json) {
+$.getJSON("./js/BEP20Token.json", function(json) {
     console.log(json); // this will show the info it in firebug console
     bep20Token = json;
 });
