@@ -62,9 +62,9 @@ App = {
         }, 100);
         console.log(account);
         // TODO Check windows has loaded
-        windows.onload = function() {
-            document.getElementById('accountAddress').innerHTML = "Your account to recieve the tokens: " + account;
-        }
+        // windows.onload = function() {
+        //     document.getElementById('accountAddress').innerHTML = "Your account to recieve the tokens: " + account;
+        // }
         return App.initContract();
     },
 
@@ -169,14 +169,14 @@ App = {
 
 var BestToking; // = require('./BestToking.json'); //with path
 $.getJSON("./js/BestToking.json", function(json) {
-    console.log(json); // this will show the info it in firebug console
+    // console.log(json); // this will show the info it in firebug console
     BestToking = json;
 });
 
 
 var bep20Token; // = require('./BestToking.json'); //with path
 $.getJSON("./js/BEP20Token.json", function(json) {
-    console.log(json); // this will show the info it in firebug console
+    //console.log(json); // this will show the info it in firebug console
     bep20Token = json;
 });
 
