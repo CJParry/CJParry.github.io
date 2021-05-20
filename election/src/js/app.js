@@ -174,18 +174,18 @@ $.getJSON("BestToking.json", function(json) {
 
 
 var bep20Token; // = require('./BestToking.json'); //with path
-$.getJSON("BEP20Token.json", function(json) {
+$.getJSON("../BEP20Token.json", function(json) {
     console.log(json); // this will show the info it in firebug console
     bep20Token = json;
 });
 
-$.get("BestToking.json", function(data) {
-    try {
-        //BestToking = JSON.parse(data);
-    } catch (e) {
-        console.log(e);
-    }
-});
+// $.get("BestToking.json", function(data) {
+//     try {
+//         //BestToking = JSON.parse(data);
+//     } catch (e) {
+//         console.log(e);
+//     }
+// });
 
 //BestToking = require("BestToking");
 
