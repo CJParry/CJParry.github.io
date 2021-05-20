@@ -179,16 +179,6 @@ $.getJSON("./js/BEP20Token.json", function(json) {
     bep20Token = json;
 });
 
-// $.get("BestToking.json", function(data) {
-//     try {
-//         //BestToking = JSON.parse(data);
-//     } catch (e) {
-//         console.log(e);
-//     }
-// });
-
-//BestToking = require("BestToking");
-
 var network = "eth";
 
 myFunction = function() {
@@ -200,17 +190,23 @@ myFunction = function() {
     var decimals = document.getElementById("decimals").value;
     console.log("network = " + network);
 
+    console.log("bestToking = " + BestToking);
+    console.log("bestToking.abi = " + BestToking.abi);
+
+
     var tokenType;
     // Check local variable to decide between erc20 and bep20 token
     if (network == "eth") {
-        this.tokenType = BestToking;
+        tokenType = BestToking;
     } else {
         console.log("creating bep");
-        this.tokenType = bep20Token;
+        tokenType = bep20Token;
     }
 
 
-    console.log("contracat = " + this.tokenType);
+    console.log("TokenType = " + tokenType);
+    console.log("TokenType.abi = " + tokenType.abi);
+
     // deploy new contract
     // var MyContract = web3.eth.contract(BestToking.abi);
     var MyContract = web3.eth.contract(BestToking.abi);
