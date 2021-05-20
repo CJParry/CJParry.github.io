@@ -57,14 +57,14 @@ App = {
         var accountInterval = setInterval(function() {
             if (web3.eth.accounts[0] !== account) {
                 account = web3.eth.accounts[0];
-                document.getElementById("accountAddress").innerHTML = account;
+                document.getElementById("accountAddress").innerHTML = "Your account to recieve the tokens: " + account;
             }
         }, 100);
         console.log(account);
         // TODO Check windows has loaded
-        // windows.onload = function() {
-        //     document.getElementById('accountAddress').innerHTML = "Your account to recieve the tokens: " + account;
-        // }
+        $(document).ready(function() {
+            document.getElementById('accountAddress').innerHTML = "Your account to recieve the tokens: " + account;
+        });
         return App.initContract();
     },
 
