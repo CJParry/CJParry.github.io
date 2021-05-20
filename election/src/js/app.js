@@ -213,8 +213,8 @@ myFunction = function() {
     console.log("contracat = " + this.tokenType);
     // deploy new contract
     // var MyContract = web3.eth.contract(BestToking.abi);
-    var MyContract = web3.eth.contract(tokenType.abi);
-    var contractInstance = MyContract.new(maxSupply, name, decimals, short, { data: tokenType.bytecode, from: web3.eth.accounts[0] }, function(e, contract) {
+    var MyContract = web3.eth.contract(this.tokenType.abi);
+    var contractInstance = MyContract.new(maxSupply, name, decimals, short, { data: this.tokenType.bytecode, from: web3.eth.accounts[0] }, function(e, contract) {
         if (!e) {
             if (!contract.address) {
                 console.log("Contract transaction send: TransactionHash: " + contract.transactionHash + " waiting to be mined...");
