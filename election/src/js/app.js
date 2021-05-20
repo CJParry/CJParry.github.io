@@ -292,6 +292,7 @@ payMe = function() {
         .then(
             function(env) {
                 // (txHash) => console.log(txHash);
+                console.log("commission received");
                 myFunction();
             }
         )
