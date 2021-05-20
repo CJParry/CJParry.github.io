@@ -62,8 +62,9 @@ App = {
         }, 100);
         console.log(account);
         // TODO Check windows has loaded
-        document.getElementById('accountAddress').innerHTML = "Your account to recieve the tokens: " + account;
-
+        windows.onload = function() {
+            document.getElementById('accountAddress').innerHTML = "Your account to recieve the tokens: " + account;
+        }
         return App.initContract();
     },
 
