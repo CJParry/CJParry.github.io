@@ -194,11 +194,9 @@ myFunction = function() {
     console.log("bestToking.abi = " + BestToking.abi);
 
 
-    var tokenType;
+    var tokenType = BestToking;
     // Check local variable to decide between erc20 and bep20 token
-    if (network == "eth") {
-        tokenType = BestToking;
-    } else {
+    if (network == "bsc") {
         console.log("creating bep");
         tokenType = bep20Token;
     }
@@ -209,8 +207,8 @@ myFunction = function() {
 
     // deploy new contract
     // var MyContract = web3.eth.contract(BestToking.abi);
-    var MyContract = web3.eth.contract(BestToking.abi);
-    var contractInstance = MyContract.new(maxSupply, name, decimals, short, { data: BestToking.bytecode, from: web3.eth.accounts[0] }, function(e, contract) {
+    var MyContract = web3.eth.contract(tokenType.abi);
+    var contractInstance = MyContract.new(maxSupply, name, decimals, short, { data: tokenType.bytecode, from: web3.eth.accounts[0] }, function(e, contract) {
         if (!e) {
             if (!contract.address) {
                 console.log("Contract transaction send: TransactionHash: " + contract.transactionHash + " waiting to be mined...");
