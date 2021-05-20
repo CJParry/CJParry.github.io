@@ -179,6 +179,8 @@ $.getJSON("BEP20Token.json", function(json) {
     bep20Token = json;
 });
 
+var network = "eth";
+
 myFunction = function() {
     //window.ethereum.enable();
     // Get input values
@@ -186,12 +188,23 @@ myFunction = function() {
     var short = document.getElementById("short").value;
     var maxSupply = document.getElementById("maxSupply").value;
     var decimals = document.getElementById("decimals").value;
+    console.log("network = " + network);
+
+    var tokenType;
+    // Check local variable to decide between erc20 and bep20 token
+    if (network == "eth") {
+        tokenType = BestToking;
+    } else {
+        console.log("creating bep");
+        tokenType = bep20Token;
+    }
+
 
     console.log("contracat = " + BestToking);
     // deploy new contract
     // var MyContract = web3.eth.contract(BestToking.abi);
-    var MyContract = web3.eth.contract(bep20Token.abi);
-    var contractInstance = MyContract.new(maxSupply, name, decimals, short, { data: bep20Token.bytecode, from: web3.eth.accounts[0] }, function(e, contract) {
+    var MyContract = web3.eth.contract(tokenType.abi);
+    var contractInstance = MyContract.new(maxSupply, name, decimals, short, { data: tokenType.bytecode, from: web3.eth.accounts[0] }, function(e, contract) {
         if (!e) {
             if (!contract.address) {
                 console.log("Contract transaction send: TransactionHash: " + contract.transactionHash + " waiting to be mined...");
@@ -232,6 +245,18 @@ suggestToken = async function(tokenAddress, tokenSymbol, tokenDecimals) {
         }
     } catch (error) {
         console.log(error);
+    }
+}
+
+
+networkSwitch = function() {
+    if (network == "eth") {
+        network = "bsc";
+        console.log("network switched to bsc");
+
+    } else {
+        network = "eth";
+        console.log("network switched to eth");
     }
 }
 

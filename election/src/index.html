@@ -62,12 +62,16 @@
     <input id="short" type="text" placeholder="Token Short">
     <input id="maxSupply" type="text" placeholder="Supply">
     <input id="decimals" type="text" placeholder="Decimals" defaultValue="18">
-    <h1>19 is standard number of deciamls</h1>
-    <input type="submit" onclick="myFunction()">
-    <button class="sendEthButton" onclick="payMe()">Send Eth</button>
-    <button class="enableEthereumButton">Enable Ethereum</button>
+    <button class="sendEthButton" onclick="payMe()">Create Coins</button>
     </form>
-
+    <div>
+        Ethereum Network
+        <!-- Rounded switch -->
+        <label class="switch">
+    <input type="checkbox" onclick="networkSwitch()">
+    <span class="slider round"></span>
+    </label> BSC Network
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
