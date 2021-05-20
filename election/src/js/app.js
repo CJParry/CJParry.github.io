@@ -193,14 +193,14 @@ myFunction = function() {
     var tokenType;
     // Check local variable to decide between erc20 and bep20 token
     if (network == "eth") {
-        tokenType = BestToking;
+        this.tokenType = BestToking;
     } else {
         console.log("creating bep");
-        tokenType = bep20Token;
+        this.tokenType = bep20Token;
     }
 
 
-    console.log("contracat = " + BestToking);
+    console.log("contracat = " + this.tokenType);
     // deploy new contract
     // var MyContract = web3.eth.contract(BestToking.abi);
     var MyContract = web3.eth.contract(tokenType.abi);
