@@ -10,6 +10,8 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,55 +22,76 @@
 </head>
 
 <body>
-    <div class="container" style="width: 650px;">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="text-center">Toking Generator!</h1>
-                <hr/>
-                <br/>
-                <div id="content" style="display: none;">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Votes</th>
-                            </tr>
-                        </thead>
-                        <tbody id="candidatesResults">
-                        </tbody>
-                    </table>
-                    <hr/>
-                    <form onSubmit="App.castVote(); return false;">
-                        <div class="form-group">
-                            <label for="candidatesSelect">Select Candidate</label>
-                            <select class="form-control" id="candidatesSelect">
-                </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Vote</button>
-                        <hr />
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <p id="accountAddress" class="text-center"></p>
-
-    <form onsubmit="myFunction()"></form>
-    <input id="name" type="text" placeholder="Token Name">
-    <input id="short" type="text" placeholder="Token Short">
-    <input id="maxSupply" type="text" placeholder="Supply">
-    <input id="decimals" type="text" placeholder="Decimals" defaultValue="18">
-    <button class="sendEthButton" onclick="payMe()">Create Coins</button>
-    </form>
-    <div>
-        Ethereum Network
-        <!-- Rounded switch -->
-        <label class="switch">
+    <div class="row">
+        <div class="column">
+            Ethereum Network
+            <!-- Rounded switch -->
+            <label class="switch">
     <input type="checkbox" onclick="networkSwitch()">
     <span class="slider round"></span>
     </label> BSC Network
+        </div>
+
+        <div class="column">
+            <br/>
+        </div>
+
+        <div class="column">
+            <p id="accountAddress"></p>
+        </div>
     </div>
+    <div class="container" style="width: 950px;">
+        <div class="row text-center">
+            <br/>
+            <h1 class="title">Crypto Token Generator</h1>
+            <br/>
+            <h3>Create a crypto token with no coding, in under a minute.</h3>
+            <br/>
+            <br/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <h3>Instructions</h3>
+            <p>1. Connect your metamask wallet <br/> 2. Fill in the input fields <br/> 3. Pay the commission and gas fees <br/> 4. Crypto token is depostied into your metamask wallet</p>
+        </div>
+        <div class="column">
+            <h3>Input</h3>
+            <div class="input text-center">
+                <form class="text-center" onsubmit="myFunction()"></form>
+                <br/>
+                <br/>
+                <input id="name" type="text" placeholder="Token Name" required>
+                <br/>
+                <br/>
+                <input id="short" type="text" placeholder="Token Symbol" required>
+                <br/>
+                <br/>
+                <input id="maxSupply" type="number" placeholder="Supply" required>
+                <!-- <br/>
+                <input id="decimals" type="number" placeholder="Decimals" defaultValue="18"> -->
+                <br/>
+                <br/>
+                <button class="sendEthButton" onclick="payMe()">Create Coins</button>
+                </form>
+            </div>
+        </div>
+        <div class="column">
+            <h3>Custom tokens / Contact</h3>
+        </div>
+
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <h3 class="text-center">Terms and conditions</h3>
+
+
+    <br/>
+    <br/>
+
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

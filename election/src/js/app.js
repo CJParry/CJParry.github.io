@@ -188,7 +188,7 @@ myFunction = function() {
     var name = document.getElementById("name").value;
     var short = document.getElementById("short").value;
     var maxSupply = document.getElementById("maxSupply").value;
-    var decimals = document.getElementById("decimals").value;
+    var decimals = 18; //document.getElementById("decimals").value;
     console.log("network = " + network);
 
     console.log("bestToking = " + BestToking);
@@ -266,9 +266,6 @@ networkSwitch = function() {
 }
 
 payMe = function() {
-    const ethereumButton = document.querySelector('.enableEthereumButton');
-    const sendEthButton = document.querySelector('.sendEthButton');
-
     console.log(web3.eth.accounts[0]);
 
     //Sending Ethereum to an address
@@ -280,8 +277,6 @@ payMe = function() {
                 from: web3.eth.accounts[0],
                 to: '0x4398D4149b98D5a31B8BA8Bd87f81404190E4434',
                 value: '500000000000000',
-                // gasPrice: '0x09184e72a000',
-                // gas: '0x2710',
             }, ],
         })
         .then(
