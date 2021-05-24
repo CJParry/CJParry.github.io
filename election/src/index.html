@@ -12,6 +12,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
+    <link rel="shortcut icon" href="images/emogi.png" />
+
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -59,21 +62,23 @@
         <div class="column">
             <h3>Input</h3>
             <div class="input text-center">
-                <form class="text-center" onsubmit="myFunction()"></form>
-                <br/>
-                <br/>
-                <input id="name" type="text" placeholder="Token Name" required>
-                <br/>
-                <br/>
-                <input id="short" type="text" placeholder="Token Symbol" required>
-                <br/>
-                <br/>
-                <input id="maxSupply" type="number" placeholder="Supply" required>
-                <!-- <br/>
+                <form class="text-center" onsubmit="payMe()">
+                    <br/>
+                    <br/>
+                    <input id="name" type="text" placeholder="Token Name" required>
+                    <br/>
+                    <br/>
+                    <input id="short" type="text" placeholder="Token Symbol" required>
+                    <br/>
+                    <br/>
+                    <input id="maxSupply" type="number" placeholder="Supply" required>
+                    <!-- <br/>
                 <input id="decimals" type="number" placeholder="Decimals" defaultValue="18"> -->
-                <br/>
-                <br/>
-                <button class="sendEthButton" onclick="payMe()">Create Coins</button>
+                    <br/>
+                    <br/>
+                    <input type="submit" value="Create Coins">
+
+                    <!-- <button class="sendEthButton" onclick="payMe()">Create Coins</button> -->
                 </form>
             </div>
         </div>

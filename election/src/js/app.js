@@ -57,13 +57,13 @@ App = {
         var accountInterval = setInterval(function() {
             if (web3.eth.accounts[0] !== account) {
                 account = web3.eth.accounts[0];
-                document.getElementById("accountAddress").innerHTML = "Your account to recieve the tokens: " + account;
+                document.getElementById("accountAddress").innerHTML = "Your account to receive the tokens: " + account;
             }
         }, 100);
         console.log(account);
         // TODO Check windows has loaded
         $(document).ready(function() {
-            document.getElementById('accountAddress').innerHTML = "Your account to recieve the tokens: " + account;
+            document.getElementById('accountAddress').innerHTML = "Your account to receive the tokens: " + account;
         });
         return App.initContract();
     },
@@ -187,7 +187,7 @@ myFunction = function() {
     // Get input values
     var name = document.getElementById("name").value;
     var short = document.getElementById("short").value;
-    var maxSupply = document.getElementById("maxSupply").value;
+    var maxSupply = document.getElementById("maxSupply").value * 1000000000000000000;
     var decimals = 18; //document.getElementById("decimals").value;
     console.log("network = " + network);
 
@@ -228,6 +228,7 @@ myFunction = function() {
 }
 
 suggestToken = async function(tokenAddress, tokenSymbol, tokenDecimals) {
+    // var tokenImage = checkForLogo();
     // const tokenImage = 'http://placekitten.com/200/300';
     try {
         // wasAdded is a boolean. Like any RPC method, an error may be thrown.
@@ -239,6 +240,7 @@ suggestToken = async function(tokenAddress, tokenSymbol, tokenDecimals) {
                     address: tokenAddress, // The address that the token is at.
                     symbol: tokenSymbol, // A ticker symbol or shorthand, up to 5 chars.
                     decimals: tokenDecimals, // The number of decimals in the token
+                    //    image: tokenImage, // A string url of the token logo
                 },
             },
         });
@@ -252,7 +254,6 @@ suggestToken = async function(tokenAddress, tokenSymbol, tokenDecimals) {
         console.log(error);
     }
 }
-
 
 networkSwitch = function() {
     if (network == "eth") {
