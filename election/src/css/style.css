@@ -16,6 +16,16 @@ body {
     clear: both;
 }
 
+.checkbox {
+    padding-left: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start
+}
+
 @media screen and (max-width: 600px) {
     .column {
         width: 100%;
