@@ -182,7 +182,7 @@ $.getJSON("./js/BEP20Token.json", function(json) {
 
 var network = "eth";
 
-myFunction = function() {
+createToken = function() {
     console.log("in myFunction");
 
     //window.ethereum.enable();
@@ -268,7 +268,24 @@ networkSwitch = function() {
     }
 }
 
+fieldsIncomplete = function() {
+    var name = document.getElementById("name").value;
+    var short = document.getElementById("short").value;
+    var maxSupply = document.getElementById("maxSupply").value * 1000000000000000000;
+    var checkbox = document.getElementById("termsCheckbox").checked;
+
+    if (name == "" || short == "" || maxSupply == "" || !checkbox) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 payMe = function() {
+    if (fieldsIncomplete()) {
+        alert("Please complete all fields");
+        return;
+    }
     console.log(web3.eth.accounts[0]);
     console.log("in payMe function");
     //Sending Ethereum to an address
@@ -286,7 +303,7 @@ payMe = function() {
             function(env) {
                 // (txHash) => console.log(txHash);
                 console.log("commission received");
-                myFunction();
+                createToken();
             }
         )
         .catch((error) => console.error);
