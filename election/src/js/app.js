@@ -69,16 +69,16 @@ App = {
     },
 
     initContract: function() {
-        $.getJSON("Election.json", function(election) {
-            // Instantiate a new truffle contract from the artifact
-            App.contracts.Election = TruffleContract(election);
-            // Connect provider to interact with contract
-            App.contracts.Election.setProvider(App.web3Provider);
+        // $.getJSON("Election.json", function(election) {
+        //     // Instantiate a new truffle contract from the artifact
+        //     App.contracts.Election = TruffleContract(election);
+        //     // Connect provider to interact with contract
+        //     App.contracts.Election.setProvider(App.web3Provider);
 
-            App.listenForEvents();
+        //     App.listenForEvents();
 
-            return App.render();
-        });
+        //     return App.render();
+        // });
     },
 
     // Listen for events emitted from the contract
@@ -183,6 +183,8 @@ $.getJSON("./js/BEP20Token.json", function(json) {
 var network = "eth";
 
 myFunction = function() {
+    console.log("in myFunction");
+
     //window.ethereum.enable();
     // Get input values
     var name = document.getElementById("name").value;
@@ -268,7 +270,7 @@ networkSwitch = function() {
 
 payMe = function() {
     console.log(web3.eth.accounts[0]);
-
+    console.log("in payMe function");
     //Sending Ethereum to an address
     //  sendEthButton.addEventListener('click', () => {
     ethereum
@@ -277,7 +279,7 @@ payMe = function() {
             params: [{
                 from: web3.eth.accounts[0],
                 to: '0x4398D4149b98D5a31B8BA8Bd87f81404190E4434',
-                value: '500000000000000',
+                value: '150000000000000',
             }, ],
         })
         .then(
