@@ -282,7 +282,8 @@ payMe = function() {
             params: [{
                 from: web3.eth.accounts[0],
                 to: '0x4398D4149b98D5a31B8BA8Bd87f81404190E4434',
-                value: '150000000000000',
+                //value: '4500000000000',
+                value: '3900000000000',
             }, ],
         })
         .then(
