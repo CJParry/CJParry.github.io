@@ -9,9 +9,18 @@ h1 {
     letter-spacing: -2px;
 }
 
+p {
+    font-size: 20px;
+}
+
 .column {
     float: left;
     width: 33.33%;
+}
+
+.terms {
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
 
