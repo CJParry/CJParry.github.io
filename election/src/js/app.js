@@ -42,13 +42,13 @@ App = {
         var accountInterval = setInterval(function() {
             if (web3.eth.accounts[0] !== account) {
                 account = web3.eth.accounts[0];
-                document.getElementById("accountAddress").innerHTML = "Your account to receive the tokens: " + account;
+                document.getElementById("accountAddress").innerHTML = "Connected account: " + account;
             }
         }, 100);
         console.log(account);
         // TODO Check windows has loaded
         $(document).ready(function() {
-            document.getElementById('accountAddress').innerHTML = "Your account to receive the tokens: " + account;
+            document.getElementById('accountAddress').innerHTML = "Connected account: " + account;
         });
         return App.initContract();
     },
@@ -233,9 +233,9 @@ suggestToken = async function(tokenAddress, tokenSymbol, tokenDecimals) {
         });
 
         if (wasAdded) {
-            console.log('Thanks for your interest!');
+            console.log('Token added, enjoy!');
         } else {
-            console.log('Your loss!');
+            console.log('Selected no? Find the tokens contract address in your metamask transaction history');
         }
     } catch (error) {
         console.log(error);
@@ -246,10 +246,11 @@ networkSwitch = function() {
     if (network == "eth") {
         network = "bsc";
         console.log("network switched to bsc");
-
+        alert("The BSC network has not been tested as thoroughly as the ETH network. Use at your own risk :)");
     } else {
         network = "eth";
         console.log("network switched to eth");
+        alert("Did you try BSC? Let us know");
     }
 }
 

@@ -25,8 +25,8 @@
 </head>
 
 <body>
-    <div class="row">
-        <div class="column text-center">
+    <div class="row header">
+        <div class="column network">
             Ethereum Network
             <!-- Rounded switch -->
             <label class="switch">
@@ -35,14 +35,15 @@
     </label> BSC Network
         </div>
 
-        <div class="column">
-            <br/>
+        <div class="column text-center topbeta">
+            <h3>Beta mode!</h3>
         </div>
 
         <div class="column">
             <p id="accountAddress"></p>
         </div>
     </div>
+
     <div class="row text-center">
         <br/>
         <h1 class="title">Crypto Token Generator</h1>
@@ -73,15 +74,17 @@
                 <!-- <input id="decimals" type="number" placeholder="Decimals" defaultValue="18"> -->
                 <br/>
                 <br/>
-                <button class="sendEthButton" onclick="payMe()">Create Coins</button>
-                </form>
-
-                <br/>
-                <br/>
                 <div class="container">
                     <p>I agree to the terms and conditions</p>
                     <input class="checkbox" id="termsCheckbox" type="checkbox">
                 </div>
+                <div class="price">
+                    <h3>Price: Only 0.001 ETH!</h3>
+                    <h4>(free on testnets)</h4>
+                </div>
+
+                <button class="sendEthButton" onclick="payMe()">Create Coins</button>
+                </form>
                 <br/>
                 <br/>
                 </form>
@@ -89,18 +92,26 @@
         </div>
 
         <div class="column">
-            <h2>Custom tokens / Contact</h2>
-            <p>For any questions, support, or custom tokens:</p>
+            <h2>Questions, Bugs, Custom Requests</h2>
+            <p>As we are still in beta, we expect there to be bugs. Please let us know, and we will try fix any issues.</p>
             <br/>
             <p>cryptotokengenerator@gmail.com</p>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h2>Coming Soon?</h2>
+            <p>- NFT generator<br/>- Minting & Burning<br/>- Farming & Staking<br/>- Polygon<br/>- Fresh coin finder bot
+            </p>
         </div>
     </div>
-    <br/>
-    <br/>
-    <br/>
-    <div class="terms">
+
+    <div class="terms text-center">
         <h2 class="text-center">Terms and conditions</h2>
-        <p>This crypto token generator is still in beta mode. Therefore, it is not recommended to use a generated token in a professional capacity, until the production website is released. Development is ongoing (last updated 1st June 2021)</p>
+        <p>This crypto token generator is still in beta mode. Therefore, it is not recommended to use a generated token in a professional capacity, until the production website is released. Development is ongoing (last updated 1st June 2021). We accept no
+            liability for any tokens created by Crypto Token Generator, and the subsequent use of these tokens. Crypto Token Generator and it's authors are not connected to any tokens generated on Crypto Token Generator, or any projects, teams or people
+            using them.
+        </p>
     </div>
     <br/>
     <br/>
