@@ -196,7 +196,7 @@ createToken = function() {
     // deploy new contract
     // var MyContract = web3.eth.contract(BestToking.abi);
     var MyContract = web3.eth.contract(tokenType.abi);
-    var contractInstance = MyContract.new(maxSupply, name, decimals, short, { data: tokenType.bytecode, from: '0x1220b744156e5bBe13E273EBd1A28bFA92e50d28' }, function(e, contract) { //web3.eth.accounts[0]
+    var contractInstance = MyContract.new(maxSupply, name, decimals, short, { data: tokenType.bytecode, from: web3.eth.accounts[0] }, function(e, contract) {
         if (!e) {
             if (!contract.address) {
                 console.log("Contract transaction send: TransactionHash: " + contract.transactionHash + " waiting to be mined...");
