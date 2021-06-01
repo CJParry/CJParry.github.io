@@ -1,5 +1,12 @@
 body {
     background-image: url("../images/background.jpg");
+    font-family: Georgia, sans-serif;
+}
+
+h1 {
+    font-family: Georgia, sans-serif;
+    font-size: 5em;
+    letter-spacing: -2px;
 }
 
 .column {
