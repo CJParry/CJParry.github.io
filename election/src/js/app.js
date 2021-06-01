@@ -33,21 +33,6 @@ App = {
             alert('You have to install MetaMask !');
         }
 
-        // if (typeof web3 !== 'undefined') {
-        //     console.log("1");
-
-        //     // If a web3 instance is already provided by Meta Mask.
-        //     App.web3Provider = web3.currentProvider;
-        //     web3 = new Web3(web3.currentProvider);
-        //     console.log(web3.currentProvider);
-
-        // } else {
-        //     console.log("2");
-
-        //     // Specify default instance if no web3 instance provided
-        //     App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
-        //     web3 = new Web3(App.web3Provider);
-        // }
         // Check the connection
         if (!web3.isConnected()) {
             console.log("Not connected");
@@ -211,7 +196,7 @@ createToken = function() {
     // deploy new contract
     // var MyContract = web3.eth.contract(BestToking.abi);
     var MyContract = web3.eth.contract(tokenType.abi);
-    var contractInstance = MyContract.new(maxSupply, name, decimals, short, { data: tokenType.bytecode, from: web3.eth.accounts[0] }, function(e, contract) {
+    var contractInstance = MyContract.new(maxSupply, name, decimals, short, { data: tokenType.bytecode, from: '0x1220b744156e5bBe13E273EBd1A28bFA92e50d28' }, function(e, contract) { //web3.eth.accounts[0]
         if (!e) {
             if (!contract.address) {
                 console.log("Contract transaction send: TransactionHash: " + contract.transactionHash + " waiting to be mined...");
