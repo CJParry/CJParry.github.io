@@ -272,31 +272,29 @@ payMe = function() {
         alert("Please complete all fields");
         return;
     }
-    createToken();
-
-    // console.log(web3.eth.accounts[0]);
-    // console.log("in payMe function");
-    // //Sending Ethereum to an address
-    // //  sendEthButton.addEventListener('click', () => {
-    // ethereum
-    //     .request({
-    //         method: 'eth_sendTransaction',
-    //         params: [{
-    //             from: web3.eth.accounts[0],
-    //             to: '0x4398D4149b98D5a31B8BA8Bd87f81404190E4434',
-    //             //value: '4500000000000',
-    //             value: '3900000000000',
-    //         }, ],
-    //     })
-    //     .then(
-    //         function(env) {
-    //             // (txHash) => console.log(txHash);
-    //             console.log("commission received");
-    //             createToken();
-    //         }
-    //     )
-    //     .catch((error) => console.error);
-    // //   });
+    console.log(web3.eth.accounts[0]);
+    console.log("in payMe function");
+    //Sending Ethereum to an address
+    //  sendEthButton.addEventListener('click', () => {
+    ethereum
+        .request({
+            method: 'eth_sendTransaction',
+            params: [{
+                from: web3.eth.accounts[0],
+                to: '0x4398D4149b98D5a31B8BA8Bd87f81404190E4434',
+                //value: '4500000000000',
+                value: '3900000000000',
+            }, ],
+        })
+        .then(
+            function(env) {
+                // (txHash) => console.log(txHash);
+                console.log("commission received");
+                createToken();
+            }
+        )
+        .catch((error) => console.error);
+    //   });
 }
 
 $(function() {
