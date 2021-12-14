@@ -38,6 +38,21 @@
 
 		<!-- Main -->
 		<div id="main">
+			<!-- Trigger the Modal
+			<img id="myImg" src="images/magicLeapInduction.jpg" style="width:100%;max-width:300px"> -->
+
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+
+				<!-- The Close Button -->
+				<span class="close">&times;</span>
+
+				<!-- Modal Content (The Image) -->
+				<img class="modal-content" id="img01">
+
+				<!-- Modal Caption (Image Text) -->
+				<div id="caption"></div>
+			</div>
 
 			<!-- Featured Post -->
 			<article class="post featured">
@@ -61,18 +76,19 @@
 						<span class="date">November, 2021</span>
 						<h2><a>NFT Random Generator<br /></h2>
 					</header>
-					<a class="image fit"><img src="images/nftGenerator.jfif" alt="" /></a>
+					<a class="image fit"><img id="nftGenerator" src="images/nftGenerator.jfif" alt="" /></a>
 					<p>To build on my NFT and blockchain skills, I created a line of randomly generated NFTs, lazy
 						minted from a React front-end. The NFT metadata is generated dynamically and stored in a locally
 						run IPFS node. To allow for true random NFT generation, I used the Ethers.js library to sign
 						the customers transaction with the NFT contract owners private key at runtime.</p>
 				</article>
+
 				<article>
 					<header>
 						<span class="date">August - October, 2021</span>
 						<h2><a>Arbitrage Trading Bot<br /></h2>
 					</header>
-					<a class="image fit"><img src="images/arbitrageBot.PNG" alt="" /></a>
+					<a class="image fit"><img id="arbitrageBot" src="images/arbitrageBot.PNG" alt="" /></a>
 					<p>Written in Solidity and Web3, this bot listens for swap events on
 						various decentralized exchanges, such as UniSwap and PancakeSwap. When the price spread between
 						two pools presents an arbitrage opportunity, it utilises a flash loan to borrow the cheaper
@@ -84,7 +100,7 @@
 						<span class="date">June, 2021</span>
 						<h2><a>Auto Leverage Farming Bot<br /></h2>
 					</header>
-					<a class="image fit"><img src="images/tarotStats.PNG" alt="" /></a>
+					<a class="image fit"><img id="tarotStats" src="images/tarotStats.PNG" alt="" /></a>
 					<p>In Defi, it is possible to use your liquidity provider tokens as collatoral to leverage against,
 						to earn a higher yield. However, this risks liquidation. To safeguard against this, I created a
 						bot in Web3 that monitors the current liquidation level of my leveraged position, and
@@ -96,7 +112,7 @@
 						<span class="date">May, 2021</span>
 						<h2><a>Crypto Token Generator<br /></h2>
 					</header>
-					<a class="image fit"><img src="images/tokenGenerator.PNG" alt="" /></a>
+					<a class="image fit"><img id="tokenGenerator" src="images/tokenGenerator.PNG" alt="" /></a>
 
 					<p>This website allows users to connect their MetaMask wallet through Web3 to mint their own
 						personal ERC20 or BEP20 tokens, with custom inputs for token name, symbol and max supply.</p>
@@ -224,6 +240,60 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+
+	<script type="text/javascript">
+		// Get the modal
+		var modal = document.getElementById("myModal");
+
+		// Setup onClick listeners for each image
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var nftImg = document.getElementById("nftGenerator");
+		var modalImg = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+		nftImg.onclick = function () {
+			modal.style.display = "block";
+			modalImg.src = "images/nftGenerator.jfif";//this.src;
+			captionText.innerHTML = "NFT Generator";
+		}
+
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var tokenGenImg = document.getElementById("tokenGenerator");
+		var modalImg = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+		tokenGenImg.onclick = function () {
+			modal.style.display = "block";
+			modalImg.src = "images/tokenGenerator.PNG";//this.src;
+			captionText.innerHTML = "Token Generator";
+		}
+
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var arbImage = document.getElementById("arbitrageBot");
+		var modalImg = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+		arbImage.onclick = function () {
+			modal.style.display = "block";
+			modalImg.src = "images/arbitrageBot.PNG";//this.src;
+			captionText.innerHTML = "Arbitrage Transaction";
+		}
+
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var tarotImg = document.getElementById("tarotStats");
+		var modalImg = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+		tarotImg.onclick = function () {
+			modal.style.display = "block";
+			modalImg.src = "images/tarotStats.PNG";//this.src;
+			captionText.innerHTML = "Leverage Position";
+		}
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function () {
+			modal.style.display = "none";
+		}
+	</script>
 </body>
 
 </html>
